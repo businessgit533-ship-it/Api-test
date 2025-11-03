@@ -20,18 +20,40 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 
-      - name: List files in the repository
+      - name: POST to reqres API and capture token
         run: |
-          ls ${{ github.workspace }}
+          set -e
+          echo "Sending POST to https://reqres.in/api/login ..."
 
-      - name: Do something simple
+          
+          response=$(curl -s -X POST "https://reqres.in/api/login" \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: reqres-free-v1" \
+            -d '{"email":"eve.holt@reqres.in","password":"cityslicka"}')
+
+          echo "Raw response: $response"
+
+          # JSON
+          token=$(python3 -c "import sys, json; d=json.load(sys.stdin); print(d.get('token',''))" <<< "$response")
+
+          if [ -z "$token" ]; then
+            echo "❌ ERROR: token not found in response."
+            exit 1
+          fi
+
+          echo "✅ Token received: $token"
+
+          # output.txt
+          echo "$token" > output.txt
+          echo "📁 Token saved to output.txt:"
+          cat output.txt
+
+      - name: Commit and push output.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Workflow executed successfully 🚀" > output.txt
-          cat output.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add output.txt
-          git commit -m "Add output.txt from workflow run" || echo "No changes to commit"
+          git commit -m "Add output.txt with token from reqres API" || echo "No changes to commit"
           git push
