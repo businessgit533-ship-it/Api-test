@@ -19,3 +19,6 @@ jobs:
       - name: Do something simple          
         run: echo "Workflow executed successfully " > output.txt
                                   cat output.txt
+                                  git add output.txt
+                                  git commit -m "Add output.txt from workflow run" || echo "No changes to commit"
+                                  git push
