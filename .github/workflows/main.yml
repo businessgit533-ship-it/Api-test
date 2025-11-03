@@ -16,8 +16,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Do something simple          
-        run: echo "Workflow executed successfully " > output.txt
+      - name: Do something simple  
+        env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+               echo "Workflow executed successfully " > output.txt
                                   cat output.txt
                                   git add output.txt
                                   git commit -m "Add output.txt from workflow run" || echo "No changes to commit"
