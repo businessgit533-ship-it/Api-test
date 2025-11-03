@@ -1,41 +1,22 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions
-
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
-
 jobs:
   Explore-GitHub-Actions:
-      runs-on: ubuntu-latest
-
-          steps:
-                - name: Check out repository code
-                        uses: actions/checkout@v5
-
-                 - name: Show basic info
-                       run: |
-                             echo " Triggered by: ${{ github.event_name }}"
-                             echo " Running on: ${{ runner.os }}"
-                             echo " Branch: ${{ github.ref }}"
-                            echo " Repository: ${{ github.repository }}"
-
-                              - name: List files in repository
-                                      run: ls -la ${{ github.workspace }}
-
-                                           - name: Test Do something simple
-                                            run: |
-                                        echo "Workflow executed successfully " > output.txt
-                              cat output.txt
-                                                                                                                              
-                                - name: Commit and push output file
-                              run: |
-                                                                       git config --global user.name "github-actions[bot]"
-                            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                                               git add output.txt
-                                       git commit -m "Add output.txt from workflow run"
-                                                    git push
-                                      env:
-                               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                                 
-                                                                                                                                                                                                                      - name: Final message
-                                                                                                                                                                                                                              run: echo " This job completed successfully with status: ${{ job.status }}."
-                                                                                                                                                                                                                              
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Do something simple          
+              run: |
+                        echo "Workflow executed successfully " > output.txt
+                                  cat output.txt
