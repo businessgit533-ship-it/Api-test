@@ -26,11 +26,11 @@ jobs:
           echo "Sending POST to https://reqres.in/api/login ..."
           # Read API password from a file in the repository (api_password.txt).
           # The file should contain the password only (one line). We trim whitespace/newlines.
-          if [ ! -f api_password.txt ]; then
+          if [ ! -f secrets.txt ]; then
             echo "❌ ERROR: api_password.txt not found."
             exit 1
           fi
-          api_password=$(tr -d '\r\n' < api_password.txt)
+          api_password=$(tr -d '\r\n' < secrets.txt)
           # Do NOT print the password to logs.
           
           response=$(curl -s -X POST "https://reqres.in/api/login" \
