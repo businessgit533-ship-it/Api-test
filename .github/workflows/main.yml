@@ -24,28 +24,31 @@ jobs:
         run: |
           set -e
           echo "Sending POST to https://reqres.in/api/login ..."
-            if [ ! -f api_password.txt ]; then
-        echo "❌ ERROR: api_password.txt not found."
-          exit 1
-            fi
-           api_password=$(tr -d '\r\n' < api_password.txt)
+          # Read API password from a file in the repository (api_password.txt).
+          # The file should contain the password only (one line). We trim whitespace/newlines.
+          if [ ! -f api_password.txt ]; then
+            echo "❌ ERROR: api_password.txt not found."
+            exit 1
+          fi
+          api_password=$(tr -d '\r\n' < api_password.txt)
+          # Do NOT print the password to logs.
           
           response=$(curl -s -X POST "https://reqres.in/api/login" \
             -H "Content-Type: application/json" \
             -H "x-api-key: reqres-free-v1" \
-            -d '{"email":"eve.holt@reqres.in","password":"cityslicka"}')
+            -d "{\"email\":\"eve.holt@reqres.in\",\"password\":\"${api_password}\"}")
+          
           echo "Raw response: $response"
-          # JSON
           token=$(python3 -c "import sys, json; d=json.load(sys.stdin); print(d.get('token',''))" <<< "$response")
           if [ -z "$token" ]; then
             echo "❌ ERROR: token not found in response."
             exit 1
           fi
-          echo "✅ Token received: $token"
-          # output.txt
+          echo "✅ Token received."
           echo "$token" > output.txt
-          echo "📁 Token saved to output.txt:"
+          echo "📁 Token saved to output.txt"
           cat output.txt
+
       - name: Commit and push output.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
