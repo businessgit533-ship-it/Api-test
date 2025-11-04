@@ -1,0 +1,9 @@
+def hello():
+    print("Hello from Belal")
+
+
+def bye():
+    print("from Belal")
+
+
+print(hello())
