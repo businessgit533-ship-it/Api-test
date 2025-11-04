@@ -64,11 +64,12 @@ jobs:
 
           payload="$payload] }"
 
-          # Send payload to ServiceNow API using basic auth
+                   # Send payload to ServiceNow API using Basic Auth header
           echo "Sending payload to ServiceNow API..."
+          auth=$(echo -n "admin:R!YU5v9b=mJw" | base64)
           response=$(curl -s -w "\n%{http_code}" -X POST "https://dev203047.service-now.com/api/1436129/importupdateset/getxmlfile" \
             -H "Content-Type: application/json" \
-            -u "${user}:${api_password}" \
+            -H "Authorization: Basic $auth" \
             -d "$payload")
 
           http_code=$(echo "$response" | tail -n1)
@@ -84,3 +85,4 @@ jobs:
             echo "❌ Failed to send payload to ServiceNow (status $http_code)."
             exit 1
           fi
+
