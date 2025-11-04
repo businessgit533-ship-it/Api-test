@@ -44,35 +44,22 @@ jobs:
             changed_files=$(git ls-files)
           fi
 
-          # Python script to safely read file content as JSON string
-          script=$(cat <<'PYCODE'
-import sys, json
-import pathlib
-path = sys.argv[1]
-try:
-    text = pathlib.Path(path).read_text(encoding="utf-8", errors="ignore")
-except Exception:
-    text = ""
-print(json.dumps(text))
-PYCODE
-)
-
-          # Build JSON payload with commit sha and contents of changed files
+          # Build JSON payload
           payload='{ "commit_sha": "'"${GITHUB_SHA:-unknown}"'", "actor":"'"${GITHUB_ACTOR:-unknown}"'", "files": ['
           first=true
           while IFS= read -r file; do
             [ -z "$file" ] && continue
             [ ! -f "$file" ] && continue
 
-            content=$(python3 - "$file" <<< "$script")
+            content=$(python3 -c "import json; import sys; f=open('${file}', 'r', encoding='utf-8', errors='ignore'); d=f.read(); f.close(); print(json.dumps(d))")
 
             if [ "$first" = true ]; then
               first=false
             else
-              payload="$payload,"
+              payload=\"$payload,\"
             fi
 
-            payload="$payload{\"path\":\"$(printf '%s' "$file" | sed 's/"/\\"/g')\",\"content\":$content}"
+            payload="$payload{\"path\":\"$(printf '%s' "$file" | sed 's/\"/\\\\\"/g')\",\"content\":$content}"
           done <<< "$changed_files"
 
           payload="$payload] }"
