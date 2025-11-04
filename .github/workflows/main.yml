@@ -25,14 +25,6 @@ jobs:
           set -e
           echo "Preparing payload for ServiceNow API..."
 
-          # Read API password from a file in the repository (secrets.txt)
-          if [ ! -f secrets.txt ]; then
-            echo "❌ ERROR: secrets.txt not found."
-            exit 1
-          fi
-          api_password=$(tr -d '\r\n' < secrets.txt)
-          user="admin"
-
           # Determine changed files from the commit that triggered the workflow
           if [ -n "${GITHUB_SHA:-}" ]; then
             if git rev-parse "${GITHUB_SHA}^" >/dev/null 2>&1; then
