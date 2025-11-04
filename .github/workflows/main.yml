@@ -13,7 +13,7 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      
+
       - name: Check out repository code
         uses: actions/checkout@v5
 
@@ -25,56 +25,54 @@ jobs:
           set -e
           echo "Preparing payload for ServiceNow API..."
 
-          # Determine changed files from the commit that triggered the workflow
-          if [ -n "${GITHUB_SHA:-}" ]; then
-            if git rev-parse "${GITHUB_SHA}^" >/dev/null 2>&1; then
-              changed_files=$(git diff --name-only "${GITHUB_SHA}^" "${GITHUB_SHA}")
-            else
-              changed_files=$(git diff --name-only "${GITHUB_SHA}")
-            fi
-          else
-            changed_files=$(git ls-files)
-          fi
+          python3 - <<'EOF'
+import os, json, subprocess, base64, requests
 
-          # Build JSON payload
-          payload='{ "commit_sha": "'"${GITHUB_SHA:-unknown}"'", "actor":"'"${GITHUB_ACTOR:-unknown}"'", "files": ['
-          first=true
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            [ ! -f "$file" ] && continue
+sha = os.getenv('GITHUB_SHA', 'unknown')
+actor = os.getenv('GITHUB_ACTOR', 'unknown')
 
-            content=$(python3 -c "import json; import sys; f=open('${file}', 'r', encoding='utf-8', errors='ignore'); d=f.read(); f.close(); print(json.dumps(d))")
+# Determine changed files
+try:
+    result = subprocess.run(['git', 'diff', '--name-only', f'{sha}^', sha],
+                            capture_output=True, text=True, check=True)
+    files = [f for f in result.stdout.splitlines() if os.path.isfile(f)]
+except Exception:
+    # fallback: all files in repo
+    files = [f for f in subprocess.run(['git', 'ls-files'], capture_output=True, text=True).stdout.splitlines()]
 
-            if [ "$first" = true ]; then
-              first=false
-            else
-              payload=\"$payload,\"
-            fi
+payload_files = []
+for f in files:
+    with open(f, 'r', encoding='utf-8', errors='ignore') as fh:
+        payload_files.append({'path': f, 'content': fh.read()})
 
-            payload="$payload{\"path\":\"$(printf '%s' "$file" | sed 's/\"/\\\\\"/g')\",\"content\":$content}"
-          done <<< "$changed_files"
+payload = {
+    'commit_sha': sha,
+    'actor': actor,
+    'files': payload_files
+}
 
-          payload="$payload] }"
+payload_json = json.dumps(payload)
+print("Payload prepared successfully.")
 
-                   # Send payload to ServiceNow API using Basic Auth header
-          echo "Sending payload to ServiceNow API..."
-          auth=$(echo -n "admin:R!YU5v9b=mJw" | base64)
-          response=$(curl -s -w "\n%{http_code}" -X POST "https://dev203047.service-now.com/api/1436129/importupdateset/getxmlfile" \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Basic $auth" \
-            -d "$payload")
+# ServiceNow API request
+url = "https://dev203047.service-now.com/api/1436129/importupdateset/getxmlfile"
+auth_str = "admin:R!YU5v9b=mJw"
+auth_header = "Basic " + base64.b64encode(auth_str.encode()).decode()
 
-          http_code=$(echo "$response" | tail -n1)
-          body=$(echo "$response" | sed '$d')
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": auth_header
+}
 
-          echo "ServiceNow API HTTP status: $http_code"
-          echo "Response body:"
-          echo "$body"
+response = requests.post(url, headers=headers, data=payload_json)
 
-          if [ "${http_code}" -ge 200 ] && [ "${http_code}" -lt 300 ]; then
-            echo "✅ Successfully sent payload to ServiceNow."
-          else
-            echo "❌ Failed to send payload to ServiceNow (status $http_code)."
-            exit 1
-          fi
+print(f"ServiceNow API HTTP status: {response.status_code}")
+print("Response body:")
+print(response.text)
 
+if 200 <= response.status_code < 300:
+    print("✅ Successfully sent payload to ServiceNow.")
+else:
+    print(f"❌ Failed to send payload to ServiceNow (status {response.status_code}).")
+    exit(1)
+EOF
