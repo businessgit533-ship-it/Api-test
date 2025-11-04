@@ -24,8 +24,8 @@ jobs:
         run: |
           set -e
           echo "Preparing payload for ServiceNow API..."
-          # Read API password from a file in the repository (secrets.txt).
-          # The file should contain the password only (one line). We trim whitespace.
+
+          # Read API password from a file in the repository (secrets.txt)
           if [ ! -f secrets.txt ]; then
             echo "❌ ERROR: secrets.txt not found."
             exit 1
@@ -44,35 +44,40 @@ jobs:
             changed_files=$(git ls-files)
           fi
 
+          # Python script to safely read file content as JSON string
+          script=$(cat <<'PYCODE'
+import sys, json
+import pathlib
+path = sys.argv[1]
+try:
+    text = pathlib.Path(path).read_text(encoding="utf-8", errors="ignore")
+except Exception:
+    text = ""
+print(json.dumps(text))
+PYCODE
+)
+
           # Build JSON payload with commit sha and contents of changed files
           payload='{ "commit_sha": "'"${GITHUB_SHA:-unknown}"'", "actor":"'"${GITHUB_ACTOR:-unknown}"'", "files": ['
           first=true
           while IFS= read -r file; do
             [ -z "$file" ] && continue
-            if [ ! -f "$file" ]; then
-              continue
-            fi
-            content=$(python3 - <<'PY' "$file"
-                 import sys, json
-                  p = sys.argv[1]
-try:
-    with open(p, 'r', encoding='utf-8') as f:
-        data = f.read()
-except Exception:
-    data = ""
-print(json.dumps(data))
-PY
-"$file")
+            [ ! -f "$file" ] && continue
+
+            content=$(python3 - "$file" <<< "$script")
+
             if [ "$first" = true ]; then
               first=false
             else
               payload="$payload,"
             fi
+
             payload="$payload{\"path\":\"$(printf '%s' "$file" | sed 's/"/\\"/g')\",\"content\":$content}"
           done <<< "$changed_files"
+
           payload="$payload] }"
 
-          # Send payload to ServiceNow API using basic auth (user + password from file)
+          # Send payload to ServiceNow API using basic auth
           echo "Sending payload to ServiceNow API..."
           response=$(curl -s -w "\n%{http_code}" -X POST "https://dev203047.service-now.com/api/1436129/importupdateset/getxmlfile" \
             -H "Content-Type: application/json" \
