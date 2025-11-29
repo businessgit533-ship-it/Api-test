@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<unload unload_date="2025-11-28 23:34:11">
+<unload unload_date="2025-11-28 23:39:20">
 <sys_remote_update_set action="INSERT_OR_UPDATE">
 <application display_value="Global">global</application>
 <application_name>Global</application_name>
@@ -16,16 +16,16 @@
 <release_date/>
 <remote_base_update_set/>
 <remote_parent_id/>
-<remote_sys_id>b4b9af7447adf21035f71ba4116d4387</remote_sys_id>
+<remote_sys_id>344aefb02b2932941773f7e3d891bfd5</remote_sys_id>
 <state>loaded</state>
 <summary/>
 <sys_class_name>sys_remote_update_set</sys_class_name>
 <sys_created_by>svc_cicd</sys_created_by>
-<sys_created_on>2025-11-29 07:34:11</sys_created_on>
-<sys_id>eb3ae3b02b2932941773f7e3d891bf28</sys_id>
+<sys_created_on>2025-11-29 07:39:20</sys_created_on>
+<sys_id>326ba7304761361035f71ba4116d4375</sys_id>
 <sys_mod_count>0</sys_mod_count>
 <sys_updated_by>svc_cicd</sys_updated_by>
-<sys_updated_on>2025-11-29 07:34:11</sys_updated_on>
+<sys_updated_on>2025-11-29 07:39:20</sys_updated_on>
 <update_set/>
 <update_source/>
 <updated/>
@@ -207,21 +207,21 @@ function vgetTech(vCI, vServiceOffering, vserviceCIClass) {
     }
 }]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;x372111&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-28 18:43:09&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;f67051762b7cfed41773f7e3d891bf73&lt;/sys_id&gt;&lt;sys_mod_count&gt;28&lt;/sys_mod_count&gt;&lt;sys_name&gt;Populate Fields based on mapping - TW&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_f67051762b7cfed41773f7e3d891bf73&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;x239153&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-29 07:33:39&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=f67051762b7cfed41773f7e3d891bf73"/&gt;&lt;/record_update&gt;</payload>
 <payload_hash>1512396493</payload_hash>
-<remote_update_set display_value="BS_STRY0923071_ServiceNow_V1">eb3ae3b02b2932941773f7e3d891bf28</remote_update_set>
+<remote_update_set display_value="BS_STRY0923071_ServiceNow_V1">326ba7304761361035f71ba4116d4375</remote_update_set>
 <replace_on_upgrade>false</replace_on_upgrade>
 <sys_created_by>svc_cicd</sys_created_by>
-<sys_created_on>2025-11-29 07:34:11</sys_created_on>
-<sys_id>e33ae3b02b2932941773f7e3d891bf29</sys_id>
+<sys_created_on>2025-11-29 07:39:20</sys_created_on>
+<sys_id>b66ba7304761361035f71ba4116d4375</sys_id>
 <sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>19ace8823c60000001</sys_recorded_at>
+<sys_recorded_at>19ace88b4f40000001</sys_recorded_at>
 <sys_updated_by>svc_cicd</sys_updated_by>
-<sys_updated_on>2025-11-29 07:34:11</sys_updated_on>
+<sys_updated_on>2025-11-29 07:39:20</sys_updated_on>
 <table>u_telus_work_order</table>
 <target_name>Populate Fields based on mapping - TW</target_name>
 <type>Business Rule</type>
 <update_domain>global</update_domain>
 <update_guid>7b1ae3b8cbedf210334b1cbe1f50d6d9</update_guid>
-<update_guid_history>7b1ae3b8cbedf210334b1cbe1f50d6d9:1512396493,7e1aefb836edf2103c0c64f18192e046:2091473246,80d00db0f82dbe54ad526b822bd64e65:1512396493,9fb0c570642dbe54c048e1b91a996a02:-1893846895,6b9a9c74d721b6dc3f46800248d3ff31:316613708,222a98fcdced76dcbb02f7c74807f7b8:-987647604,7838d878216d76dc48db8fd76c1e30e9:1710148460,f3c284387c61be543d7e62027c9a9065:138568302,28d1f3e0e5ad7e541510309f6ed0e622:1916985608,96641f88dba932548c911709a59da17c:-1893846895,76dc4744f6a5b61c336faff8b49b3dbb:-2094383191,22f45ec865adfe144f27d68a45698bf2:316265446,c3c9eef36d593e981025ae30d117c672:-1071592512,8168ae3b86193e98a5e7d1882a7be342:-724371791,6067667786953e98e418c2cc0a249383:453788265,b1562af3c2953e98b8b1cd489865a58c:1010303419,06066abf94553e9827bcf882e2e5d8a8:-1070064547,08e522bb7cd13e985b19b5066e072e78:347297537,23a3a6f3f3513e988d7bb7085af5364a:1797570851,62e6157774593a1400e805ba3fa67f5e:-1071592512,1c9658de0a513a90768fd31ee333df46:1166343416,bc05d45ecc513a90b8f8b04324f513a7:-68364672,0653d49a18513a90db0aad57a76da70d:-942000394,24e1549634513a90fa2f252f77865ce8:-1024076107,2d5fc49ed5113a90dfa2ddc9d2b97403:-1718668055,dd1d07a94c49b698912e99d386971098:1291314786,faba1699a30df258790423c1b9055649:818396127,a02e7d99b185b2585cc002e06f9a218c:-1583697102,173db19d4d85b2588f7c3352d58b589b:275032416,959775510981b258dc24cda34421bdfe:-1848289846,a9b4c2855545f2180e535215adaa5018:713977270,ce740205ad45f21805f6cc6107d14581:1831291577,8fead101df417218c52205bf617bc4ee:466218326,e449550db5cd3218257d8b44d6aa55ff:1831291577,f9296801a8c1bed4dfe0f77279a065f9:1783687829,64a6c0f7bc38365828e3d499b4dffa39:1831291577,d3030833f5383658b1d19180f7d0b7be:1380439678,28b2c077d5f436583e8cabd7e59da0e5:987205814,da2b424f67743250016f9ef9785dbfde:-122993168,ff1bcac7ad743250f58c47d08bec8802:1511428134,f04d810fe0bc7e102c3b398082abf4ba:-1290478970,bb7a6db69774321837eaeb3048987613:1511428134,c817edb6dc3432182a2c5070e50bcc61:3873018,b466ad76c534321851e968cfd41bc9e1:1013985,2b625d3aabbcfed4f5159c3a5ea05bf1:1048194592,85f15976d1bcfed4970c629c40666da2:-187434592,44e159763fbcfed4f338643fd7933f9c:-1301014049,fa70557ef67cfed430d608403235a4cf:-1365511614</update_guid_history>
+<update_guid_history>7b1ae3b8cbedf210334b1cbe1f50d6d9:1512396493,7b1ae3b8cbedf210334b1cbe1f50d6d9:1512396493,7e1aefb836edf2103c0c64f18192e046:2091473246,80d00db0f82dbe54ad526b822bd64e65:1512396493,9fb0c570642dbe54c048e1b91a996a02:-1893846895,6b9a9c74d721b6dc3f46800248d3ff31:316613708,222a98fcdced76dcbb02f7c74807f7b8:-987647604,7838d878216d76dc48db8fd76c1e30e9:1710148460,f3c284387c61be543d7e62027c9a9065:138568302,28d1f3e0e5ad7e541510309f6ed0e622:1916985608,96641f88dba932548c911709a59da17c:-1893846895,76dc4744f6a5b61c336faff8b49b3dbb:-2094383191,22f45ec865adfe144f27d68a45698bf2:316265446,c3c9eef36d593e981025ae30d117c672:-1071592512,8168ae3b86193e98a5e7d1882a7be342:-724371791,6067667786953e98e418c2cc0a249383:453788265,b1562af3c2953e98b8b1cd489865a58c:1010303419,06066abf94553e9827bcf882e2e5d8a8:-1070064547,08e522bb7cd13e985b19b5066e072e78:347297537,23a3a6f3f3513e988d7bb7085af5364a:1797570851,62e6157774593a1400e805ba3fa67f5e:-1071592512,1c9658de0a513a90768fd31ee333df46:1166343416,bc05d45ecc513a90b8f8b04324f513a7:-68364672,0653d49a18513a90db0aad57a76da70d:-942000394,24e1549634513a90fa2f252f77865ce8:-1024076107,2d5fc49ed5113a90dfa2ddc9d2b97403:-1718668055,dd1d07a94c49b698912e99d386971098:1291314786,faba1699a30df258790423c1b9055649:818396127,a02e7d99b185b2585cc002e06f9a218c:-1583697102,173db19d4d85b2588f7c3352d58b589b:275032416,959775510981b258dc24cda34421bdfe:-1848289846,a9b4c2855545f2180e535215adaa5018:713977270,ce740205ad45f21805f6cc6107d14581:1831291577,8fead101df417218c52205bf617bc4ee:466218326,e449550db5cd3218257d8b44d6aa55ff:1831291577,f9296801a8c1bed4dfe0f77279a065f9:1783687829,64a6c0f7bc38365828e3d499b4dffa39:1831291577,d3030833f5383658b1d19180f7d0b7be:1380439678,28b2c077d5f436583e8cabd7e59da0e5:987205814,da2b424f67743250016f9ef9785dbfde:-122993168,ff1bcac7ad743250f58c47d08bec8802:1511428134,f04d810fe0bc7e102c3b398082abf4ba:-1290478970,bb7a6db69774321837eaeb3048987613:1511428134,c817edb6dc3432182a2c5070e50bcc61:3873018,b466ad76c534321851e968cfd41bc9e1:1013985,2b625d3aabbcfed4f5159c3a5ea05bf1:1048194592,85f15976d1bcfed4970c629c40666da2:-187434592,44e159763fbcfed4f338643fd7933f9c:-1301014049,fa70557ef67cfed430d608403235a4cf:-1365511614</update_guid_history>
 <update_set/>
 <view/>
 </sys_update_xml>
