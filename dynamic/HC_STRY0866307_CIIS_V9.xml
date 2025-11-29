@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2025-11-28 21:34:03">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>HC_STRY0866307_CIIS_V9</name>
+<origin_sys_id/>
+<parent/>
+<release_date/>
+<remote_base_update_set/>
+<remote_parent_id/>
+<remote_sys_id>e2f7d2884765b21c35f71ba4116d43d0</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>svc_cicd</sys_created_by>
+<sys_created_on>2025-11-29 05:34:03</sys_created_on>
+<sys_id>2bbe03704725b21035f71ba4116d43ce</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>svc_cicd</sys_updated_by>
+<sys_updated_on>2025-11-29 05:34:03</sys_updated_on>
+<update_set/>
+<update_source/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sysevent_email_action_704badc62bd9ae141773f7e3d891bf23</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_email_action"&gt;&lt;sysevent_email_action action="INSERT_OR_UPDATE"&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_condition/&gt;&lt;affected_field_on_event/&gt;&lt;category display_value="Uncategorized" name="Uncategorized"&gt;c97d83137f4432005f58108c3ffa917a&lt;/category&gt;&lt;collection&gt;sysapproval_approver&lt;/collection&gt;&lt;condition table="sysapproval_approver"&gt;source_table=rm_release_scrum^EQ&lt;item endquery="false" field="source_table" goto="false" newquery="false" operator="=" or="false" value="rm_release_scrum"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/condition&gt;&lt;content_type&gt;text/html&lt;/content_type&gt;&lt;default_interval/&gt;&lt;description&gt;This email notification is sent out when a new Scrum Release requires an approval from a group. Notification first approval&lt;/description&gt;&lt;digest_from/&gt;&lt;digest_html/&gt;&lt;digest_reply_to/&gt;&lt;digest_separator_html&gt;&lt;![CDATA[&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;]]&gt;&lt;/digest_separator_html&gt;&lt;digest_separator_text&gt;&lt;![CDATA[\n--------------------------------------------------------------------------------\n]]&gt;&lt;/digest_separator_text&gt;&lt;digest_subject/&gt;&lt;digest_template/&gt;&lt;digest_text/&gt;&lt;digestable&gt;false&lt;/digestable&gt;&lt;enable_dynamic_translation&gt;false&lt;/enable_dynamic_translation&gt;&lt;event_name&gt;approval.inserted&lt;/event_name&gt;&lt;event_parm_1&gt;false&lt;/event_parm_1&gt;&lt;event_parm_2&gt;false&lt;/event_parm_2&gt;&lt;exclude_delegates&gt;false&lt;/exclude_delegates&gt;&lt;force_delivery&gt;false&lt;/force_delivery&gt;&lt;from/&gt;&lt;generation_type&gt;event&lt;/generation_type&gt;&lt;importance/&gt;&lt;include_attachments&gt;false&lt;/include_attachments&gt;&lt;item&gt;event.parm1&lt;/item&gt;&lt;item_table/&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;message/&gt;&lt;message_html&gt;&lt;![CDATA[&lt;div&gt;${sysapproval.number} has been submitted for your approval. Please review the details and provide your decision on whether or not this release can proceed using the "Approve" or "Reject" links at the bottom of this email.&lt;/div&gt;
+&lt;h3&gt;&lt;span style="color: #843fa1; font-family: helvetica; font-size: 11.5pt;"&gt;Scrum Release Details&lt;/span&gt;&lt;/h3&gt;
+&lt;div&gt;Short description: ${sysapproval.short_description}&lt;/div&gt;
+&lt;div&gt;Description:&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;${sysapproval.description}&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Release Approver Message:&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;${sysapproval.u_release_approver_message}&lt;/div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;
+&lt;h3&gt;&lt;span style="color: #843fa1; font-family: helvetica; font-size: 11.5pt;"&gt;Approval Activities&lt;/span&gt;&lt;/h3&gt;
+Click here to view Scrum Release: ${sysapproval.URI_REF} Approver: ${approver}
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;div&gt;${mailto:mailto.approval}&lt;/div&gt;
+&lt;div&gt;${mailto:mailto.rejection}&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+Thank you,
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;&lt;span style="color: #843fa1; font-family: helvetica; font-size: 11.5pt;"&gt;TELUS ServiceNow Release Management&lt;/span&gt;&lt;/h3&gt;
+&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/message_html&gt;&lt;message_list/&gt;&lt;message_text/&gt;&lt;name&gt;Approval Required - Scrum Release Approval 1&lt;/name&gt;&lt;omit_watermark&gt;false&lt;/omit_watermark&gt;&lt;order&gt;100&lt;/order&gt;&lt;push_message_only&gt;false&lt;/push_message_only&gt;&lt;recipient_fields&gt;approver,document_id&lt;/recipient_fields&gt;&lt;recipient_groups/&gt;&lt;recipient_users/&gt;&lt;reply_to/&gt;&lt;send_self&gt;true&lt;/send_self&gt;&lt;sms_alternate/&gt;&lt;style/&gt;&lt;subject&gt;A New ServiceNow Scrum Release (RLSE) is pending your approval: ${number} | Une nouvelle version de Scrum (RLSE) ServiceNow  est en attente de votre approbation: ${number}&lt;/subject&gt;&lt;subscribable&gt;false&lt;/subscribable&gt;&lt;sys_class_name&gt;sysevent_email_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;T947099&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-05-05 13:04:57&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;704badc62bd9ae141773f7e3d891bf23&lt;/sys_id&gt;&lt;sys_mod_count&gt;22&lt;/sys_mod_count&gt;&lt;sys_name&gt;Approval Required - Scrum Release Approval 1&lt;/sys_name&gt;&lt;sys_overrides display_value="Approval Required - RITM"&gt;67e47623db94c7006a4d591e5e96198a&lt;/sys_overrides&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_email_action_704badc62bd9ae141773f7e3d891bf23&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;T947099&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-08-04 13:05:50&lt;/sys_updated_on&gt;&lt;sys_version&gt;2&lt;/sys_version&gt;&lt;template display_value="TELUS Standard Email Template_v2"&gt;14913b791bfa49502c496287bc4bcb73&lt;/template&gt;&lt;type&gt;email&lt;/type&gt;&lt;weight&gt;0&lt;/weight&gt;&lt;/sysevent_email_action&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1129848169</payload_hash>
+<remote_update_set display_value="HC_STRY0866307_CIIS_V9">2bbe03704725b21035f71ba4116d43ce</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>svc_cicd</sys_created_by>
+<sys_created_on>2025-11-29 05:34:03</sys_created_on>
+<sys_id>afbe03704725b21035f71ba4116d43ce</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ac13f91120000001</sys_recorded_at>
+<sys_updated_by>svc_cicd</sys_updated_by>
+<sys_updated_on>2025-11-29 05:34:03</sys_updated_on>
+<table>sysapproval_approver</table>
+<target_name>Approval Required - Scrum Release Approval 1</target_name>
+<type>Notification</type>
+<update_domain>global</update_domain>
+<update_guid>34241e57628726d0e80a4655df878065</update_guid>
+<update_guid_history>34241e57628726d0e80a4655df878065:-1129848169,f093f466e78b22d0b259878c1f1cf59d:-1480756897,eaba586e0d0722d04cf09a2286538759:-971434095,025d3458246d6a105fae55464c11ceb4:1699308073,34241e57628726d0e80a4655df878065:-1129848169,f093f466e78b22d0b259878c1f1cf59d:-1480756897,3d41302e7a4b22d0bf63a5f13ff8ade5:1958591559,eaba586e0d0722d04cf09a2286538759:-971434095,97c71c26640722d07a4cbaeb7142b372:1369272875,d765146e17c322d0e194a4731b9c3e04:629852432,025d3458246d6a105fae55464c11ceb4:1699308073,951d3c94ef6d6a1066c924a80b2e64ee:1060796987,7d8cf494e66d6a101e9d077fe7e24e0f:-693862693,ea5c7454f86d6a10fea458c69693423c:-1383213890,1b951ac353dd6ed08b55d7fda8b26492:-538801500,c2da0a8b3a5d6ed0cf10ac0ab7f25e3f:-1753167746,eef5e54bf7d92e98d56630525fd92d24:-1809968127,442529c35b992e98e9eec5b8ab9f1096:840556993,6da32947fc192e98c3aadea5dfde1721:-1364246356,bea18eceb8192254ec34b3d9dff3dbf6:-237028657,0a4dbdcebd912254852e69a6a399806e:-941936894,b005b5863b19ee14e0d62f42bb1f72b7:-1784891084,11d4f982dc19ee14b217dbad3b6d5e9a:-1108793004,48437dcac455ee149db048956770743e:-1973192881,986279ce4551ee14cd76c92fce15b30e:1739210371,1eb1f10222d1ee1469d2a51b4ef20eae:512182760,d7dfe1ca8addae146a4a03f4f2b3e52d:-1922501192,304badc6ded9ae141445be3c32101829:-213414904</update_guid_history>
+<update_set/>
+<view/>
+</sys_update_xml>
+</unload>
