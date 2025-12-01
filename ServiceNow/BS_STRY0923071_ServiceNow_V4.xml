@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2025-12-01 13:39:55">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>BS_STRY0923071_ServiceNow_V4</name>
+<origin_sys_id/>
+<parent/>
+<release_date/>
+<remote_base_update_set/>
+<remote_parent_id/>
+<remote_sys_id>e69eb8b147a9361435f71ba4116d4388</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>svc_cicd</sys_created_by>
+<sys_created_on>2025-12-01 21:39:55</sys_created_on>
+<sys_id>3ffef83d2b61f2d41773f7e3d891bfa2</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>svc_cicd</sys_updated_by>
+<sys_updated_on>2025-12-01 21:39:55</sys_updated_on>
+<update_set/>
+<update_source/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_f67051762b7cfed41773f7e3d891bf73</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_telus_work_order&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="u_telus_work_order"&gt;parent.service_offeringISNOTEMPTY^parent.service_offering.nameINWPaaS - TELUS Cloud Collaboration (TC2) / TELUS Cloud Collaboration (TC2),WPaaS - Service de communications unifiées / Unified Communications Service,WPaaS - Service Ligne d'affaires (1FL) / Business Line (1FL) Service,WPaaS - Service d'accès IP/MPLS / IP/MPLS Access Service,WPaaS - Service Internet Affaires N3 (SIA-N3) - TM UM CM / (SIA/BIB)CM TM UM N3 Fibre Internet Service(SIA/BIB)CM TM UM N3 Fibre Internet Service,WPaaS - Service Réseau Intelligent (NaaS) - VPN avec encryption / NaaS Service - VPN with encryption,WPaaS - Service de Réseau Intelligent - Coupe-Feu Nouvelle Génération / Naas - Next Generation Firewall Service,WPaaS - Service de réseau local sans-fil (WLAN) / Wireless LAN (WLAN) Service,WPaaS - Service de réseau local sans-fil (WLAN) MPaaS / Wireless LAN (WLAN) Service MPaaS,WPaaS - Service de réseau local (LAN) / Local Area Network (LAN) Service,WPaaS - Service de réseau local (LAN) MPaaS / Local Area Network (LAN) Service MPaaS^ORparent.service_offering.u_service_groupLIKE77c07ee92b17a2941773f7e3d891bfe9^ORparent.service_offering.u_service_groupLIKE1dce6c8c2b00fe981773f7e3d891bffd^EQ&lt;item endquery="false" field="parent.service_offering" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/&gt;&lt;item endquery="false" field="parent.service_offering.name" goto="false" newquery="false" operator="IN" or="false" value="WPaaS - TELUS Cloud Collaboration (TC2) / TELUS Cloud Collaboration (TC2),WPaaS - Service de communications unifiées / Unified Communications Service,WPaaS - Service Ligne d'affaires (1FL) / Business Line (1FL) Service,WPaaS - Service d'accès IP/MPLS / IP/MPLS Access Service,WPaaS - Service Internet Affaires N3 (SIA-N3) - TM UM CM / (SIA/BIB)CM TM UM N3 Fibre Internet Service(SIA/BIB)CM TM UM N3 Fibre Internet Service,WPaaS - Service Réseau Intelligent (NaaS) - VPN avec encryption / NaaS Service - VPN with encryption,WPaaS - Service de Réseau Intelligent - Coupe-Feu Nouvelle Génération / Naas - Next Generation Firewall Service,WPaaS - Service de réseau local sans-fil (WLAN) / Wireless LAN (WLAN) Service,WPaaS - Service de réseau local sans-fil (WLAN) MPaaS / Wireless LAN (WLAN) Service MPaaS,WPaaS - Service de réseau local (LAN) / Local Area Network (LAN) Service,WPaaS - Service de réseau local (LAN) MPaaS / Local Area Network (LAN) Service MPaaS"/&gt;&lt;item endquery="false" field="parent.service_offering.u_service_group" goto="false" newquery="false" operator="LIKE" or="true" value="77c07ee92b17a2941773f7e3d891bfe9"/&gt;&lt;item endquery="false" field="parent.service_offering.u_service_group" goto="false" newquery="false" operator="LIKE" or="true" value="1dce6c8c2b00fe981773f7e3d891bffd"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Populate Fields based on mapping - TW&lt;/name&gt;&lt;order&gt;300&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+
+
+    var vserviceCI = current.parent.cmdb_ci;
+    var vserviceCIClass = current.parent.cmdb_ci.sys_class_name;
+    var vgetTechValue = '';
+    var vServiceOffering = current.parent.service_offering;
+	var vServiceOfferingGroup = current.parent.service_offering.u_service_group;
+    var province = 'QC';
+
+    if (current.u_province != '' &amp;&amp; current.u_province != null &amp;&amp; current.u_province != undefined) {
+        province = current.u_province;
+    } else {
+        current.u_province = 'QC';
+    }
+
+    var values = [];
+    var vWorkgrp = "";
+
+
+    var tqServiceOffData = {
+
+        '4469b79a476b665835f71ba4116d43e9': ['PBX', 'TC2_TC3', 'COPPER', 'CPS Voice'], //WPaaS - TELUS Cloud Collaboration (TC2) / TELUS Cloud Collaboration (TC2)
+        'ee0afbda476b665835f71ba4116d434e': ['PBX', 'TC2_TC3', 'COPPER', 'CPS Voice'], //WPaaS - Service de communications unifiées / Unified Communications Service
+        'c15b7bd247ab665835f71ba4116d43eb': ['VOICE', 'POTS', 'COPPER', 'Installation &amp; Repair'], //WPaaS - Service Ligne d'affaires (1FL) / Business Line (1FL) Service
+        '50b1e734476762d435f71ba4116d431b': ['WAN_L2_L3', 'WAN_L2_L3', 'WIRELESS', 'Enhanced Services'], //WPaaS - Service d'accès IP/MPLS / IP/MPLS Access Service
+        'f623a7b8476762d435f71ba4116d4369': ['WAN_L2_L3', 'WAN_L2_L3', 'FIBRE', 'Enhanced Services'], //WPaaS - Service Internet Affaires N3 (SIA-N3) - TM UM CM / (SIA/BIB)CM TM UM N3 Fibre Internet Service(SIA/BIB)CM TM UM N3 Fibre Internet Service
+        '35542ec247d0fa1835f71ba4116d43f5': ['NAAS', 'NAAS', 'OTT', 'Installation &amp; Repair'], //WPaaS - Service Réseau Intelligent (NaaS) - VPN avec encryption / NaaS Service - VPN with encryption
+        '096ae0362bd072d81773f7e3d891bf20': ['NAAS', 'NAAS', 'OTT', 'Installation &amp; Repair'], //WPaaS - Service de Réseau Intelligent - Coupe-Feu Nouvelle Génération / Naas - Next Generation Firewall Service
+        'a9a7f045472ba2d435f71ba4116d43f3': ['MANAGED_LAN', 'CPS_WIFI_CISCO', 'COPPER', 'CPS LAN'], //WPaaS - Service de réseau local sans-fil (WLAN) / Wireless LAN (WLAN) Service
+        '2fc533ee2b9cbe981773f7e3d891bf27': ['MANAGED_LAN', 'CPS_WIFI_CISCO', 'COPPER', 'CPS LAN'], //WPaaS - Service de réseau local sans-fil (WLAN) MPaaS / Wireless LAN (WLAN) Service MPaaS
+        '419a7e782b2f26101773f7e3d891bf90': ['MANAGED_LAN', 'CPS_LAN', 'COPPER', 'CPS LAN'], //WPaaS - Service de réseau local (LAN) / Local Area Network (LAN) Service
+        '1473f3a22b5cbe981773f7e3d891bf9b': ['MANAGED_LAN', 'CPS_LAN', 'COPPER', 'CPS LAN'], //WPaaS - Service de réseau local (LAN) MPaaS / Local Area Network (LAN) Service MPaaS
+		'06883a252b97a2941773f7e3d891bf52': ['VOICE', 'POTS_TQ', 'COPPER'],		//TQ - Ligne unique - lignes multiples / Single Line - Multi Line
+        '9e773a212b97a2941773f7e3d891bf86': ['HS', 'DSL_TQ', 'GPON'],			//TQ - Fibre réseau GPON / Fiber - GPON
+        'f33772ed2b57a2941773f7e3d891bf99': ['HS', 'DSL_TQ', 'COPPER'],			//TQ - ADSL / HSIA
+        'a4d8d4dd4708f61035f71ba4116d43f8': ['BUS_LINE_INTERNET', 'BUS_INTERNET_TQ', 'FIBRE'],		//TQ - Accès Internet Affaires géré (Fibre) / Managed BI (Fibre)
+        '04e8d8dd4708f61035f71ba4116d43db': ['BUS_LINE_INTERNET', 'BUS_INTERNET_TQ', 'COPPER'],		//TQ - Accès Internet Affaires géré (Cuivre) / Managed BI (Copper)
+        'c95832652b97a2941773f7e3d891bfd4': ['VOICE', 'POTS_TQ', 'COPPER'],							//TQ - Centrex / Centrex
+        '24f8d0dd4708f61035f71ba4116d43f8': ['PRIVATE_LINE', 'PRI_BRI_TQ', 'COPPER'],				//TQ - Accès primaire / PRI
+        '7838f2252b97a2941773f7e3d891bfc9': ['WAN_L2_L3', 'WAN_L2_L3_TQ', 'FIBRE'],					//TQ - DID / DID
+        'e7f77ea12b97a2941773f7e3d891bf65': ['WAN_L2_L3', 'WAN_L2_L3_TQ', 'FIBRE'],					//TQ - IP Trunking / IP Trunking
+        'd748545d4708f61035f71ba4116d43e1': ['BUS_LINE_INTERNET', 'BUS_INTERNET_TQ', 'COPPER'],		//TQ - Accès Internet Affaires géré (ADSL VPOP) / Managed BI (ADSL VPOP)
+        'dbf8d8dd4708f61035f71ba4116d43e3': ['WAN_L2_L3', 'WAN_L2_L3_TQ', 'FIBRE'],					//TQ - Utilisation de la passerelle / Gateway Usage
+        '7d0990114748f61035f71ba4116d43db': ['WAN_L2_L3', 'WAN_L2_L3_TQ', 'FIBRE'],					//TQ - Accès à distance / Remote Access
+        'c919dcdd4708f61035f71ba4116d431e': ['CARRIER_ETHERNET', 'CES_TQ', 'COPPER'],				//TQ - Commutateur Ethernet fournisseur / Carrier Ethernet Switch
+        '46a532e92b57a2941773f7e3d891bf66': ['THIRD_WAVE', 'SDS_WIFI_TQ', 'OTT'],					//TQ - Wi-Fi TELUS Affaires / Business WIFI
+        '1927b2ed2b57a2941773f7e3d891bfe8': ['CARRIER_ETHERNET', 'OPTICAL_ETHERNET_TQ', 'FIBRE'],   //TQ - ADSL (Revente Bell) / HSIA (Bell Resale)
+        '2e57b6212b97a2941773f7e3d891bf8b': ['CARRIER_ETHERNET', 'OPTICAL_ETHERNET_TQ', 'FIBRE'],	//TQ - Fibre réseau GPON (Revente Bell) / Fiber - GPON (Bell Resale)
+        '6da6b6ad2b57a2941773f7e3d891bf27': ['CARRIER_ETHERNET', 'OPTICAL_ETHERNET_TQ', 'FIBRE'],	//TQ - NHP / NHP
+        '405998114748f61035f71ba4116d4396': ['CABLE_REPAIR', 'CABLE_REPAIR', 'COPPER'],    			//TQ - NOC / NOC
+        'dac7be612b97a2941773f7e3d891bf99': ['PRIVATE_LINE', 'DS0_DS1_DS3_TQ', 'COPPER'],			//TQ - IPv4 / IPv4
+        '2ea7b6612b97a2941773f7e3d891bfd9': ['PRIVATE_LINE', 'DS0_DS1_DS3_TQ', 'COPPER'],			//TQ - BVoIP / BVoIP
+        '1de7fa612b97a2941773f7e3d891bfc5': ['PRIVATE_LINE', 'DS0_DS1_DS3_TQ', 'COPPER'],			//TQ - SIP Trunking / SIP Trunking
+        '2739dcdd4708f61035f71ba4116d4325': ['WAN_L2_L3', 'WAN_L2_L3_TQ', 'FIBRE'],					//TQ - Fibre noire / Dark Fiber
+        'efa7d231db18d09447f758b8dc96199d': ['NAAS', 'NAAS_TQ', 'OTT'],			//Network as a Service - NaaS
+		'20832d1b2b77ae581773f7e3d891bf34': ['HS', 'DSL', 'COPPER'], 			// Haute vitesse/High Speed		
+		'982a869f2b7fae581773f7e3d891bfb1': ['VOICE', 'POTS', 'COPPER'], 		// Téléphonie résidentielle/Home Phone 
+		'6ab969132bf7ae581773f7e3d891bf95': ['VOICE', 'POTS', 'WIRELESS'], 		// VOW (Voice Over Wireless)
+		'b26aed932bf7ae581773f7e3d891bfaa': ['IPTV', 'TTV', 'COPPER'], 			// Télé OPTIK (ancien)Optik TV (Legacy)
+		'940da99b2bf7ae581773f7e3d891bfbc': ['SECURITY', 'SECURITY', 'OTT'] 	// Maison connectée/SmartHome Security
+		
+    };
+
+    var isTqService = false;
+    if (tqServiceOffData[vServiceOffering]) {
+        isTqService = true;
+        values = tqServiceOffData[vServiceOffering];
+    }
+
+    current.u_wfm_job_type = values[0];
+    current.u_wfm_product_category = values[1];
+    current.u_wfm_technology = values[2];
+	if (isTqService) {
+		vWorkgrp = 'NA';
+	}
+
+	var serviceOfferingsforRClass = [
+		'20832d1b2b77ae581773f7e3d891bf34', 			// Haute vitesse/High Speed		
+		'982a869f2b7fae581773f7e3d891bfb1', 		// Téléphonie résidentielle/Home Phone 
+		'6ab969132bf7ae581773f7e3d891bf95', 		// VOW (Voice Over Wireless)
+		'b26aed932bf7ae581773f7e3d891bfaa', 			// Télé OPTIK (ancien)Optik TV (Legacy)
+		'940da99b2bf7ae581773f7e3d891bfbc' // Maison connectée/SmartHome Security
+	];
+
+	if (vServiceOffering &amp;&amp; serviceOfferingsforRClass.includes(vServiceOffering.toString())) {
+		current.u_wfm_service_class = 'R';
+	}	
+
+    if (values.length == 4) { // Set Project code only if passed in array.
+        vWorkgrp = values[3];
+    }
+
+	if (vServiceOffering.toString() == '405998114748f61035f71ba4116d4396') { // TQ - NOC / NOC 
+        current.u_wfm_classification = 'MAINTENANCE';
+		//vWorkgrp = 'Cable Repair';
+    }
+
+
+    var voutOfService = false;
+    if (current.parent.u_condition == "Out of Service") {
+        voutOfService = true;
+    }
+
+
+    //STRY0862761 Additional requirement  to set expected duration
+    var grWfmEstDur = new GlideRecord("u_wfm_mappings");
+    grWfmEstDur.addEncodedQuery("u_service_class=B^u_job_type=" + values[0] + "^u_technology=" + values[2] + "^u_product=" + values[1]);
+    grWfmEstDur.query();
+    if (grWfmEstDur.next()) {
+        current.u_wfm_duration = grWfmEstDur.u_estimated_duration;
+    }
+
+
+
+    current.u_work_group = vWorkgrp;
+	//Code for STRY0941556
+    if ((current.u_province == 'QC' || current.u_province == 'Quebec'|| current.u_province == 'QUEBEC / QUÉBEC'|| current.u_province == 'QUEBEC') &amp;&amp; vServiceOffering !='b26aed932bf7ae581773f7e3d891bfaa' &amp;&amp;
+	vServiceOffering !='940da99b2bf7ae581773f7e3d891bfbc' &amp;&amp;
+	vServiceOffering !='6ab969132bf7ae581773f7e3d891bf95' &amp;&amp;
+	vServiceOffering !='982a869f2b7fae581773f7e3d891bfb1' &amp;&amp;
+	vServiceOffering !='20832d1b2b77ae581773f7e3d891bf34' &amp;&amp;
+	vServiceOffering !='405998114748f61035f71ba4116d4396' 
+	// &amp;&amp; vServiceOfferingGroup!='1dce6c8c2b00fe981773f7e3d891bffd'
+	 ) {
+
+    // 1. Force Workgroup to NA
+    current.u_work_group = 'NA';
+
+    // 2. Append "TQ" if not already present
+    var prodCat = current.u_wfm_product_category;
+    if (prodCat &amp;&amp; !prodCat.endsWith('TQ')) {
+        current.u_wfm_product_category = prodCat + '_TQ';
+    }
+}
+    current.setWorkflow(false);
+    current.update();
+    current.setWorkflow(true);
+
+})(current, previous);
+
+function vgetTech(vCI, vServiceOffering, vserviceCIClass) {
+
+    var vSTN = new GlideRecord(vserviceCIClass);
+    if (vSTN.get(vCI)) {
+        var vClass = vSTN.sys_class_name;
+        var vSECode = '';
+        if (vserviceCIClass == 'u_cmdb_ci_service_telephone_number') {
+            vSECode = vSTN.u_nc_s_e_code.toString();
+        }
+        var vIndus = vSTN.company.u_industries_hospitality;
+
+        if (vClass == "u_cmdb_ci_telus_copper" || vClass == "u_cmdb_ci_service_telephone_number" &amp;&amp; vSECode.indexOf("BOND") == -1) {
+            return "COPPER";
+        }
+
+        if (vClass == "u_cmdb_ci_service_telephone_number" &amp;&amp; vSECode.indexOf("BOND") != -1) {
+            return "COPPER_BONDED";
+        }
+
+        if (vClass == "u_cmdb_ci_telus_fiber" &amp;&amp; vIndus.indexOf("Hospitality") != -1 &amp;&amp; vIndus) {
+            return "ETTS";
+        }
+
+        if (vClass == "u_cmdb_ci_telus_fiber") {
+            return "GPON";
+        }
+
+        if (vClass == "cmdb_ci_wap_network") {
+            return "WIRELESS";
+        }
+
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;x372111&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-10-28 18:43:09&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;false&lt;/sys_customer_update&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;f67051762b7cfed41773f7e3d891bf73&lt;/sys_id&gt;&lt;sys_mod_count&gt;38&lt;/sys_mod_count&gt;&lt;sys_name&gt;Populate Fields based on mapping - TW&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_f67051762b7cfed41773f7e3d891bf73&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;x239153&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-12-01 21:39:26&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=f67051762b7cfed41773f7e3d891bf73"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1677187410</payload_hash>
+<remote_update_set display_value="BS_STRY0923071_ServiceNow_V4">3ffef83d2b61f2d41773f7e3d891bfa2</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>svc_cicd</sys_created_by>
+<sys_created_on>2025-12-01 21:39:55</sys_created_on>
+<sys_id>b3fef83d2b61f2d41773f7e3d891bfa3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19adbdb309f0000001</sys_recorded_at>
+<sys_updated_by>svc_cicd</sys_updated_by>
+<sys_updated_on>2025-12-01 21:39:55</sys_updated_on>
+<table>u_telus_work_order</table>
+<target_name>Populate Fields based on mapping - TW</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>68ee7cf521a93614f453c8a3949be715</update_guid>
+<update_guid_history>68ee7cf521a93614f453c8a3949be715:-1677187410,2ede30f9d4693614d4be11018ee33cdb:2083316351,53e6bcf5e66136145f12c115eceff02e:-1677187410,cda60cbda2e53214e7330bf06508e834:-116507986,7e5148b5d469b2d40827038a389f6666:723867214,e0bcffe5496dfed0e22f9427688a6000:394668180,adac3f618c6dfed0ca57183c630de9a2:1006167779,48292ba53929bed001928571ed9fab54:394668180,f1d7636523e5bed061ec39bf1af773a8:1512396493,f9b7e7693ee5bed09f7661da35ef7ba3:2091473246,7b1ae3b8cbedf210334b1cbe1f50d6d9:1512396493,7e1aefb836edf2103c0c64f18192e046:2091473246,80d00db0f82dbe54ad526b822bd64e65:1512396493,9fb0c570642dbe54c048e1b91a996a02:-1893846895,6b9a9c74d721b6dc3f46800248d3ff31:316613708,222a98fcdced76dcbb02f7c74807f7b8:-987647604,7838d878216d76dc48db8fd76c1e30e9:1710148460,f3c284387c61be543d7e62027c9a9065:138568302,28d1f3e0e5ad7e541510309f6ed0e622:1916985608,96641f88dba932548c911709a59da17c:-1893846895,76dc4744f6a5b61c336faff8b49b3dbb:-2094383191,22f45ec865adfe144f27d68a45698bf2:316265446,c3c9eef36d593e981025ae30d117c672:-1071592512,8168ae3b86193e98a5e7d1882a7be342:-724371791,6067667786953e98e418c2cc0a249383:453788265,b1562af3c2953e98b8b1cd489865a58c:1010303419,06066abf94553e9827bcf882e2e5d8a8:-1070064547,08e522bb7cd13e985b19b5066e072e78:347297537,23a3a6f3f3513e988d7bb7085af5364a:1797570851,62e6157774593a1400e805ba3fa67f5e:-1071592512,1c9658de0a513a90768fd31ee333df46:1166343416,bc05d45ecc513a90b8f8b04324f513a7:-68364672,0653d49a18513a90db0aad57a76da70d:-942000394,24e1549634513a90fa2f252f77865ce8:-1024076107,2d5fc49ed5113a90dfa2ddc9d2b97403:-1718668055,dd1d07a94c49b698912e99d386971098:1291314786,faba1699a30df258790423c1b9055649:818396127,a02e7d99b185b2585cc002e06f9a218c:-1583697102,173db19d4d85b2588f7c3352d58b589b:275032416,959775510981b258dc24cda34421bdfe:-1848289846,a9b4c2855545f2180e535215adaa5018:713977270,ce740205ad45f21805f6cc6107d14581:1831291577,8fead101df417218c52205bf617bc4ee:466218326,e449550db5cd3218257d8b44d6aa55ff:1831291577,f9296801a8c1bed4dfe0f77279a065f9:1783687829,64a6c0f7bc38365828e3d499b4dffa39:1831291577,d3030833f5383658b1d19180f7d0b7be:1380439678,28b2c077d5f436583e8cabd7e59da0e5:987205814,da2b424f67743250016f9ef9785dbfde:-122993168,ff1bcac7ad743250f58c47d08bec8802:1511428134,f04d810fe0bc7e102c3b398082abf4ba:-1290478970,bb7a6db69774321837eaeb3048987613:1511428134,c817edb6dc3432182a2c5070e50bcc61:3873018,b466ad76c534321851e968cfd41bc9e1:1013985,2b625d3aabbcfed4f5159c3a5ea05bf1:1048194592,85f15976d1bcfed4970c629c40666da2:-187434592,44e159763fbcfed4f338643fd7933f9c:-1301014049,fa70557ef67cfed430d608403235a4cf:-1365511614</update_guid_history>
+<update_set/>
+<view/>
+</sys_update_xml>
+</unload>
